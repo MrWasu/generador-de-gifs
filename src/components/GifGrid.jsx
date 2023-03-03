@@ -1,3 +1,4 @@
+/* Componente que recoge cada categoria de gifs */
 import { GifItem } from './GifItem'
 import { useFetchGifs } from '../hooks/useFetchGifs'
 
@@ -16,11 +17,10 @@ export const GifGrid = ({ category }) => {
                     images.map((image) => (
                         <GifItem
                             key={image.id}
-                            {...image} // apuntes, abrevia, si hubiera 100 props, 100 props que resume
+                            {...image} // envia como props todas las propiedades de image
                         />
                     ))
                 }
-                {/* { gifs.map((e) => <p> {e} </p>)} */}
             </div>
         </div>
     )

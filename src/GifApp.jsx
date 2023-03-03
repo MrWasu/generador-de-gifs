@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { AddCategory, GifGrid } from "./components" //apuntes de porque pilla el index
+import { AddCategory, GifGrid } from "./components" 
 
 export const GifApp = () => {
 
@@ -7,13 +7,10 @@ export const GifApp = () => {
 
     const onAddCategory = (newCategory) => {
 
+        // se previene que haya una categoria repetida
         if (category.some(category => category.toLowerCase() === newCategory.toLowerCase())) return;
 
         setCategory([newCategory, ...category])
-        /* Aquí, usamos el operador spread (...) para copiar los elementos existentes del arreglo category 
-        y luego agregamos el nuevo valor 'caca' al final del arreglo.
-         De esta manera, category seguirá siendo un arreglo válido 
-         y se actualizará correctamente en la próxima renderización. */
     }
 
     return (
@@ -21,16 +18,14 @@ export const GifApp = () => {
             <h1>Generador de Gifs </h1>
 
             <AddCategory
-                // setCategory={ setCategory } 
+                // setCategory={ setCategory } bastaria para hacer lo mismo:
                 onNewCategory={event => onAddCategory(event)}
-            /> {/* apuntes */}
+            /> 
 
-
-            {
+            {   // se manda iterar el arreglo de las categorias con el componente propio de cada una
                 category.map((category) => (
-                    <GifGrid key={category} category={category} /> //apuntes porque se tienen que llamar igual???
-                )
-                )
+                    <GifGrid key={category} category={category} />
+                ))
             }
         </div>
     )

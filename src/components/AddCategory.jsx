@@ -1,6 +1,5 @@
+/* Componente que recoge la parte de imput  */
 import { useState } from 'react'
-//import { setCategory } from "../GifApp"
-
 
 export const AddCategory = ({ onNewCategory }) => {
 
@@ -9,11 +8,11 @@ export const AddCategory = ({ onNewCategory }) => {
     const onInputChange = (event) => setInputValue(event.target.value)
 
     const onSendSubmit = (event) => {
+        // previene que se recargue la pagina al mandar el form:
         event.preventDefault();
 
         if (inputValue.trim().length <= 1) return;
 
-        //setCategory( (category) => [inputValue, ...category] ) // apuntes
         onNewCategory( inputValue.trim() )
 
         setInputValue('');
@@ -29,7 +28,5 @@ export const AddCategory = ({ onNewCategory }) => {
         </form>
     )
 }
-
-// al terminar esto tomar apuntes con chatgpt de lo que aqui no entienda
 
 

@@ -1,3 +1,5 @@
+/* parte de codigo que hace las llamadas a la API y recoge los gifs */
+
 export const getGifs = async(category) => {
    
     const apiKey = '0XQtTI7m87qfQa3opURSG6TU5pfTTW4g'
