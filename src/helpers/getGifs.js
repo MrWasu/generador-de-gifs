@@ -1,4 +1,5 @@
 /* parte de codigo que hace las llamadas a la API y recoge los gifs */
+import 'whatwg-fetch'
 
 export const getGifs = async(category) => {
    
