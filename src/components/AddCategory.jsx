@@ -1,12 +1,12 @@
 /* Componente que recoge la parte de imput  */
-import { useState } from 'react'
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 export const AddCategory = ({ onNewCategory }) => {
 
-    const [inputValue, setInputValue] = useState('')
+    const [inputValue, setInputValue] = useState('');
 
-    const onInputChange = (event) => setInputValue(event.target.value)
+    const onInputChange = (event) => setInputValue(event.target.value);
 
     const onSendSubmit = (event) => {
         // previene que se recargue la pagina al mandar el form:
@@ -14,7 +14,7 @@ export const AddCategory = ({ onNewCategory }) => {
 
         if (inputValue.trim().length <= 1) return;
 
-        onNewCategory( inputValue.trim() )
+        onNewCategory( inputValue.trim() );
 
         setInputValue('');
     }
@@ -31,7 +31,7 @@ export const AddCategory = ({ onNewCategory }) => {
 }
 
 AddCategory.propTypes = {
-    onNewCategory: PropTypes.func.isRequired
+    onNewCategory: PropTypes.func.isRequired,
 }
 
 

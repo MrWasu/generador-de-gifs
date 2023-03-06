@@ -1,11 +1,11 @@
 /* Componente que recoge cada categoria de gifs */
-import { GifItem } from './GifItem'
-import { useFetchGifs } from '../hooks/useFetchGifs'
+import { GifItem } from './GifItem';
+import { useFetchGifs } from '../hooks/useFetchGifs';
 import PropTypes from 'prop-types';
 
 export const GifGrid = ({ category }) => {
 
-    const { images, isLoading } = useFetchGifs(category)
+    const { images, isLoading } = useFetchGifs(category);
 
     return (
         <div key={category}>
@@ -28,7 +28,7 @@ export const GifGrid = ({ category }) => {
 }
 
 GifGrid.propTypes = {
-    category: PropTypes.string.isRequired
+    category: PropTypes.string.isRequired,
 }
 
 

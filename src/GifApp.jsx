@@ -1,16 +1,16 @@
-import { useState } from "react"
-import { AddCategory, GifGrid } from "./components" 
+import { useState } from "react";
+import { AddCategory, GifGrid } from "./components" ;
 
 export const GifApp = () => {
 
-    const [category, setCategory] = useState(['final fantasy', 'Overwatch'])
+    const [category, setCategory] = useState(['final fantasy', 'Overwatch']);
 
     const onAddCategory = (newCategory) => {
 
         // se previene que haya una categoria repetida
         if (category.some(category => category.toLowerCase() === newCategory.toLowerCase())) return;
 
-        setCategory([newCategory, ...category])
+        setCategory([newCategory, ...category]);
     }
 
     return (
